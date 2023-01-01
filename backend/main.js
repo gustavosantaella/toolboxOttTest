@@ -11,6 +11,8 @@ const server = (app) => {
     app.listen(8000, () => {
         console.log("Server is listening on port 8000")
     })
+
+    return app
 }
 
-server(express())
+module.exports  = server(express())
