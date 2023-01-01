@@ -1,0 +1,21 @@
+version: "3"
+name: "Toolbox test"
+services:
+  backend:
+    image: node:14-alpine
+    volumes: 
+      - ./backend/:/backend:cached
+    working_dir: /backend
+    ports:
+      - 8000:8000
+    command: npm start
+  frontend: 
+    image: node:16-alpine
+    build: .
+    volumes: 
+      - ./frontend/:/frontend:cached
+    working_dir: /frontend
+    ports:
+      - 3000:3000
+    command: npm start
+    tty: true

@@ -21,7 +21,7 @@ function App() {
       })
       setFiles(arrayFiles.flat(Infinity))
     }catch(e){
-      alert(`An error ocurred ${e.message}`)
+      setFiles([])
     }
   }, [])
   useEffect(() => {
