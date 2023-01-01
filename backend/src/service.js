@@ -44,9 +44,9 @@ const format = data => {
 
 const  getFiles = async (req, res) => {
     try{
-        const queryFileName = req.query.fileName?.trim()
+        const queryFileName = req.query.fileName
         let response;
-        if(!queryFileName || queryFileName === ""){
+        if(!queryFileName || queryFileName.trim() === ""){
             response = await axios.get(`${api.url}/files`, {
                 headers:{
                     authorization: api.secretKey
